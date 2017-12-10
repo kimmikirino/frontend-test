@@ -1,9 +1,21 @@
 <section class="person-list" ng-if="::list">
   <div ng-repeat="card in list | orderBy: '-positivePerc' track by card.__id" class="person-card">
-    <div class="ki-cel-1 person-card__image" style="background-image: url({{card.picture}})"></div>
+    <div class="ki-cel-1 person-card__image" style="background-image: url({{card.picture}})">
+      <span class="person-card__order">{{$index + 1}}</span>
+    </div>
     <div class="ki-cel-3 person-card-info">
-      <span class="person-card-info__name">{{card.name}}</span>
-      <span class="person-card-info__description" ng-bind-html="card.description"></span>
+      <p class="person-card-info__name">{{card.name}}</p>
+      <p class="person-card-info__description" ng-bind-html="card.description"></p>
+    </div>
+    <div class="ki-cel-4 person-card-likes">
+      <div class="ki ki-cel-2 person-card-likes--border">
+        <p class="person-card-likes__like">Gostam</p>
+        <p class="person-card-likes__perc">{{card.positivePerc}}%</p>
+      </div>
+      <div class="ki ki-cel-2">
+        <p class="person-card-likes__dislike">Não Gostam</p>
+        <p class="person-card-likes__perc">{{card.negativePerc}}%</p>
+      </div>
     </div>
   </div>
 </section>

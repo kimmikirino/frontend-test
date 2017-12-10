@@ -5,6 +5,7 @@ body {
   background-color: @bodyColor;
   font-family: 'Montserrat', sans-serif;
   font-size: 100%;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -57,6 +58,10 @@ h1 {
 
   .person-card {
     padding: 25px;
+
+    &:nth-child(even) {
+      background-color: #f2f0f1;
+    }
   }
   .person-card__image, .person-card-info {
     vertical-align: middle;
@@ -69,6 +74,22 @@ h1 {
     background-position: top center;
     background-size: cover;
     border: 4px solid @cardColor;
+    position: relative;
+    .person-card__order {
+      position: absolute;
+      border: 1px solid #767674;
+      color: #767674;
+      background-color: #fff;
+      border-radius: 50%;
+      bottom: -5px;
+      right: -5px;
+      font-size: 13px;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      padding: 2px;
+      font-weight: 600;
+    }
   }
 
   .person-card-info {
@@ -78,12 +99,42 @@ h1 {
     }
 
     .person-card-info__name {
-      font-weight: bold;
+      font-weight: 600;
       color: @cardColor;
+      font-size: 20px;
+      margin-bottom: 5px;
     }
 
     .person-card-info__description {
       color: #909090;
+      font-size: 15px;
+    }
+
+  }
+  .person-card-likes {
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid @cardColor;
+    border-radius: 5px;
+    .person-card-likes--border {
+      border-right: 1px solid #8b8b8b;
+    }
+    .person-card-likes__like, .person-card-likes__dislike, .person-card-likes__perc{
+      padding: 5px;
+    }
+    .person-card-likes__like, .person-card-likes__dislike {
+      text-transform: uppercase;
+      background-color: @cardColor;
+      color: #fff;
+    }
+    .person-card-likes__like {
+      /*border-top-left-radius: 5px;*/
+    }
+    .person-card-likes__dislike {
+      /*border-top-right-radius: 5px;*/
+    }
+    .person-card-likes__perc {
+      color: #8f8f8f;
     }
   }
 }
