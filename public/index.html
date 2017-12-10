@@ -2,6 +2,7 @@
 <html lang="en" ng-app="fazenda">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>R7 FrontEnd Test</title>
 
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="assets/main.css">
     <!-- endbuild -->
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
 
      <!-- build:js(.tmp) dependencies.min.js -->
     <script src="lib/jquery-3.2.1.min.js"></script>
@@ -22,6 +23,7 @@
 
     <!-- build:js(.tmp) fazenda.min.js -->
     <script src="fazenda.js"></script>
+    <script src="fazendaServices.js"></script>
     <script src="assets/directives/fazenda-directives.js"></script>
     <script src="templates.js"></script>
     <!-- endbuild -->
@@ -29,5 +31,6 @@
     <script src="config/config.js"></script>
   </head>
   <body>
+    <page-header></page-header>
     <main ng-view></main>
 </html>

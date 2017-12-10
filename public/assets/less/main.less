@@ -2,5 +2,88 @@
 @import "reset.less";
 
 body {
+  background-color: @bodyColor;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100%;
+}
 
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.ki {
+  display: inline-block;
+}
+
+.ki-cel-1 {
+  width: 25%;
+}
+.ki-cel-2 {
+  width: 50%;
+}
+.ki-cel-3 {
+  width: 75%;
+}
+.ki-cel-4 {
+  width: 100%;
+}
+
+
+.page-header {
+  color: @headerFontColor;
+  border-bottom: 1px solid #dedede;
+  .page-header__brand {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .page-header__title {
+    font-weight: 800;
+    letter-spacing: -2px;
+    text-align: center;
+    background-color: @backgroundColor;
+    text-transform: uppercase;
+    padding: 15px;
+  }
+}
+
+.person-list {
+  background-color: @backgroundColor;
+  font-family: 'Montserrat', sans-serif;
+
+  .person-card {
+    padding: 25px;
+  }
+  .person-card__image, .person-card-info {
+    vertical-align: middle;
+    display: inline-block;
+  }
+  .person-card__image {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-position: top center;
+    background-size: cover;
+    border: 4px solid @cardColor;
+  }
+
+  .person-card-info {
+    padding-left: 20px;
+    .person-card-info__name, .person-card-info__description {
+      display: block;
+    }
+
+    .person-card-info__name {
+      font-weight: bold;
+      color: @cardColor;
+    }
+
+    .person-card-info__description {
+      color: #909090;
+    }
+  }
 }

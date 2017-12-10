@@ -1,5 +1,9 @@
-<section class="container">
-  <h1>
-    OLA PESSOAL
-  </h1>
+<section class="person-list" ng-if="::list">
+  <div ng-repeat="card in list | orderBy: '-positivePerc' track by card.__id" class="person-card">
+    <div class="ki-cel-1 person-card__image" style="background-image: url({{card.picture}})"></div>
+    <div class="ki-cel-3 person-card-info">
+      <span class="person-card-info__name">{{card.name}}</span>
+      <span class="person-card-info__description" ng-bind-html="card.description"></span>
+    </div>
+  </div>
 </section>

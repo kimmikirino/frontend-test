@@ -19,7 +19,7 @@ module.exports = function(grunt) {
           dist:'fazendaarchive',
           test: 'tests',
           tmp : '.tmp',
-          data : 'data',
+          data : 'public/data',
           config : 'public/config',
           lib : 'public/lib'
       },
@@ -90,8 +90,7 @@ module.exports = function(grunt) {
               '<%= config.app %>/extensions/**/*.js',
               '<%= config.app %>/assets/**/*.js',
               '<%= config.app %>/*.js',
-              '<%= config.test %>/**/*.specs.js',
-              '<%= config.data %>/**/*.js',
+              '<%= config.test %>/**/*.specs.js'
           ]
       },
 
@@ -187,14 +186,10 @@ module.exports = function(grunt) {
                   src: [
                       '*.{ico,png,txt}',
                       '.htaccess',
-                      'data/{,*/}*.json',
-                      'assets/{,*/}*.{json,ttf,woff}',
-
-                      'components/emr/partials/growth-curve/**',
-                      'components/emr/partials/print/**',
+                      'public/data/*.json',
+                      'public/assets/{,*/}*.{json,ttf,woff}',
                       '*.html',
-                      'fonts/{,*/}*.*',
-                      'integrations/{,*/}*.*',
+                      'fonts/{,*/}*.*'
                   ]
               }]
           },
@@ -206,7 +201,8 @@ module.exports = function(grunt) {
                   dest: '<%= config.tmp %>/data',
                   src:[
                       '**/*.js',
-                      '../config.*.js'
+                      '../config.*.js',
+                      '*.json'
                   ]
               }]
           },
