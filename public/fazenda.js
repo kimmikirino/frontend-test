@@ -56,17 +56,3 @@ fazenda.controller('fazendaController', ['$scope', '$rootScope', 'fazendaService
 
     fazendaServices.getFazendaData(success);
   }]);
-
-/************************************************************************************************
- * Directives
- ************************************************************************************************/
-fazenda.directive('personCard', ['$rootScope', '$location',  function ( $rootScope, $location) {
-    return {
-        restrict: 'E',
-        templateUrl:  'components/partials/personCard.html',
-        replace: true,
-        link: function (scope, iElm, iAttrs, controller) {
-        }
-    };
-}]);
-

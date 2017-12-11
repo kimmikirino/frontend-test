@@ -43,7 +43,7 @@ h1 {
   }
 
   .page-header__title {
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -2px;
     text-align: center;
     background-color: @backgroundColor;
@@ -101,13 +101,13 @@ h1 {
     .person-card-info__name {
       font-weight: 600;
       color: @cardColor;
-      font-size: 20px;
+      font-size: 18px;
       margin-bottom: 5px;
     }
 
     .person-card-info__description {
       color: #909090;
-      font-size: 15px;
+      font-size: 12px;
     }
 
   }
@@ -121,20 +121,149 @@ h1 {
     }
     .person-card-likes__like, .person-card-likes__dislike, .person-card-likes__perc{
       padding: 5px;
+      font-weight: 600;
     }
     .person-card-likes__like, .person-card-likes__dislike {
       text-transform: uppercase;
       background-color: @cardColor;
       color: #fff;
-    }
-    .person-card-likes__like {
-      /*border-top-left-radius: 5px;*/
-    }
-    .person-card-likes__dislike {
-      /*border-top-right-radius: 5px;*/
+      font-size: 13px;
     }
     .person-card-likes__perc {
       color: #8f8f8f;
+      font-weight: 700;
+      font-size: 25px;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  .ki-dk-1 {
+    width: 8.33%;
+  }
+  .ki-dk-2 {
+    width: 16.66%;
+  }
+  .ki-dk-3 {
+    width: 25%;
+  }
+  .ki-dk-4 {
+    width: 33.33%;
+  }
+  .ki-dk-5 {
+    width: 41.66%;
+  }
+  .ki-dk-6 {
+    width: 50%;
+  }
+  .ki-dk-7 {
+    width: 58.33%;
+  }
+  .ki-dk-8 {
+    width: 66.66%;
+  }
+  .ki-dk-12 {
+    width: 100%;
+  }
+  .page-header {
+    max-width: 345px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    border: none;
+    padding-top: 20px;
+    .page-header__brand, .page-header__title  {
+      display: inline-block;
+    }
+
+    .page-header__brand {
+      margin-left: -30px;
+      margin-bottom: -13px;
+      position: relative;
+      z-index: 1;
+      padding: 0;
+      vertical-align: bottom;
+    }
+    .page-header__title {
+      position: relative;
+      padding: 10px 15px;
+      margin-left: -60px;
+      border-radius: 3px;
+      vertical-align: bottom;
+      text-align: right;
+      width: 262px;
+    }
+  }
+  .person-list {
+    max-width: 345px;
+    margin: 0 auto;
+    border-radius: 3px;
+    margin-bottom: 20px;
+
+    .person-card-likes {
+      display: none;
+    }
+
+    .person-card {
+      position: relative;
+      &:hover {
+        background-color: @cardColor;
+        .person-card__image {
+          border: 4px solid #fff;
+        }
+        .person-card-info {
+          .person-card-info__name {
+            color: #fff;
+          }
+          .person-card-info__description {
+            color: #000;
+          }
+        }
+        .person-card-likes {
+          display: block;
+          position: absolute;
+          right: -57%;
+          bottom: 26%;
+        }
+      }
+
+      .person-card-likes {
+        border: none;
+        .person-card-likes__like, .person-card-likes__dislike {
+          font-size: 11px;
+        }
+        .person-card-likes__like--border {
+          border-top-left-radius: 5px;
+        }
+        .person-card-likes__dislike--border {
+          border-top-right-radius: 5px;
+        }
+        .person-card-likes__perc {
+          background-color: @backgroundColor;
+        }
+        .person-card-likes__perc--border-left {
+          border-bottom-left-radius: 5px;
+        }
+        .person-card-likes__perc--border-right {
+          border-bottom-right-radius: 5px;
+        }
+        &:after, &:before {
+          right: 100%;
+          top: 50%;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+        }
+        &:after {
+          border-color: rgba(136, 183, 213, 0);
+          border-right-color: @backgroundColor;
+          border-width: 10px;
+          margin-top: -10px;
+        }
+      }
     }
   }
 }
