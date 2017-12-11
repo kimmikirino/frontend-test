@@ -4,7 +4,6 @@
 var fazenda = angular.module('fazenda', [
   'ngRoute',
   'compiledTemplates',
-  'appConfig',
   'fazendaServices'
 ]);
 
@@ -37,13 +36,13 @@ fazenda.controller('fazendaController', ['$scope', '$rootScope', 'fazendaService
         item.negative = parseInt(item.negative);
         item.total = item.positive + item.negative;
         if(item.positive) {
-          item.positivePerc = Math.round((item.positive/item.total)*100);
+          item.positivePerc = $scope.calcPercentage(item.positive,item.total);
         } else {
           item.positivePerc = item.positive = 0;
         }
 
         if(item.negative) {
-          item.negativePerc = Math.round((item.negative/item.total)*100);
+          item.negativePerc =  $scope.calcPercentage(item.negative,item.total);
         } else {
           item.negativePerc = item.negative = 0;
         }
@@ -51,7 +50,10 @@ fazenda.controller('fazendaController', ['$scope', '$rootScope', 'fazendaService
         item.description = $sce.trustAsHtml(item.description);
         return item;
       });
-      console.log($scope.list);
+    };
+
+    $scope.calcPercentage = function(value, total) {
+      return Math.round((value/total)*100);
     };
 
     fazendaServices.getFazendaData(success);
