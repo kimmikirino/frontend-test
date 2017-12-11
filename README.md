@@ -1,9 +1,9 @@
-### Teste FrontEnd para o R7.com
+## Teste FrontEnd para o R7.com
 
-## Sobre o projeto
+### Sobre o projeto
 Projeto desenvolvido em Angularjs, utilizando Grunt como automatizador, LESS como pré-processador CSS e BEM como metodologia CSS.
 
-## Primeiros passos
+### Primeiros passos
 
 Download ou clone esse repositório.
 
